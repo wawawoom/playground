@@ -1,0 +1,89 @@
+#snk-toaster-root {
+  position: fixed;
+  width: 300px;
+  border: 1px solid red;
+  right: 0;
+  top: 50px;
+  overflow: hidden;
+
+  .snk-toast {
+    display: block;
+    width: 300px;
+    margin: 0 0 10px 0;
+    position: relative;
+    margin-left: 300px;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    .snk-toast-content {
+      width: 300px;
+
+      color: white;
+      padding: 12px 24px;
+    }
+
+    // animation-fill-mode: forwards;
+
+    &.time-3000 {
+      background: #0da547;
+      animation-name: enter, out, disapear;
+      animation-duration: 200ms, 200ms, 200ms;
+      animation-delay: 0ms, 2600ms, 2800ms;
+      animation-timing-function: ease-out, ease-in;
+      animation-fill-mode: forwards, forwards;
+    }
+
+    &.time-5000 {
+      background: #e60078;
+      animation-name: enter, out, disapear;
+      animation-duration: 200ms, 200ms, 200ms;
+      animation-delay: 0ms, 4600ms, 4800ms;
+      animation-timing-function: ease-out, ease-in;
+      animation-fill-mode: forwards, forwards;
+    }
+
+    // &.time-5000 {
+    //   animation-name: in, out;
+    //   animation-delay: 0s, 3s;
+    //   animation-duration: 0.25s, 0.25s;
+    //   //animation-duration: 5s;
+    // }
+  }
+}
+
+@keyframes enter {
+  to {
+    margin-left: 0px;
+  }
+}
+
+@keyframes out {
+  to {
+    margin-left: 300px;
+  }
+}
+
+@keyframes disapear {
+  to {
+    height: 0;
+    margin-bottom: 0;
+  }
+}
+
+// @keyframes inAndOut {
+//   0% {
+//     margin-left: 300px;
+//   }
+
+//   10% {
+//     margin-left: 0px;
+//   }
+
+//   90% {
+//     margin-left: 0px;
+//   }
+
+//   100% {
+//     margin-left: 300px;
+//   }
+// }
